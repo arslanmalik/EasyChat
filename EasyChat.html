@@ -1,0 +1,28 @@
+<head>
+  <title>Easy Chat</title>
+</head>
+ 
+<body>
+  <div class="container">
+    <header>
+      <h1>Easy Chat</h1>
+	  {{> loginButtons}}
+	  <form class="new-message">
+        <input type="text" name="text" placeholder="Enter Your Message Here" />
+      </form>
+    </header>
+ 
+    <ul>
+      {{#each msgs}}
+		<li>
+			{{username}}
+			{{>message}}
+		</li>
+      {{/each}}
+    </ul>
+  </div>
+</body>
+ 
+<template name="message">
+  <li>{{text}}</li>
+</template>
